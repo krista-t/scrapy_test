@@ -7,17 +7,23 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "scrapy_test"
+import os
 
-SPIDER_MODULES = ["scrapy_test.spiders"]
-NEWSPIDER_MODULE = "scrapy_test.spiders"
+# add module path
+
+
+
+BOT_NAME = "zenodo"
+
+SPIDER_MODULES = ["scrapy_test.spiders", "scrapy_test.scheduler", "scrapy_test.zenodo"]
+NEWSPIDER_MODULE = ["scrapy_test.spiders", "scrapy_test.scheduler", "scrapy_test.zenodo"]
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "scrapy_test (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True   #THIS IS CHANGED FROM TRUE TO FALSE, not illegal but consider ethical issues
+ROBOTSTXT_OBEY = False   #THIS IS CHANGED FROM TRUE TO FALSE, not illegal but consider ethical issues
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
