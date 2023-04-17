@@ -1,24 +1,18 @@
 import schedule
 
 import os
-
-
 import time
 
+def run_spider():
+    command = "scrapy runspider zenodo.py -o output.json"
+    os.system(command)
 
 
+# Schedule the spider to run every 10 seconds
+schedule.every(10).seconds.do(run_spider)
 
-
-def run_scrapy_command():
-
-    print("Scheduler started")
-    # go out one directory and run the scrapy command
-    os.chdir("..")
-    os.system("scrapy runspider zenodo.py -o output.json")
-
-#schedule.every(10).seconds.do(run_scrapy_command)
+# Run the scheduler indefinitely
 while True:
-   # print("Scheduler running")
     schedule.run_pending()
     time.sleep(1)
 
