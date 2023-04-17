@@ -5,7 +5,7 @@ import json
 class ZenodoSpider(scrapy.Spider):
     name = "zenodo"
     allowed_domains = ["zenodo.org"]
-    start_urls = ["https://zenodo.org/api/records/?page=1&size=10&communities=oswec&sort=mostrecent"]
+    start_urls = ["https://zenodo.org/api/records/?page=1&size=20&access_right=open&communities=oswec"]
 
     def parse(self, response):
         data = json.loads(response.body)
