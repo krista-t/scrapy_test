@@ -2,7 +2,6 @@ import schedule
 
 import subprocess
 import time
-
 from zenodo import ZenodoSpider
 
 def run_spider():
@@ -12,7 +11,7 @@ def run_spider():
 
 schedule.every(7).days.do(run_spider)
 
-# Run the scheduler indefinitely
+
 while True:
     schedule.run_pending()
     time.sleep(1)
