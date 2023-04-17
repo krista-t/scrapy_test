@@ -7,16 +7,16 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-import os
+
 
 # add module path
 
 
 
-BOT_NAME = "zenodo"
+BOT_NAME = "scrapy_test"
 
-SPIDER_MODULES = ["scrapy_test.spiders", "scrapy_test.scheduler", "scrapy_test.zenodo"]
-NEWSPIDER_MODULE = ["scrapy_test.spiders", "scrapy_test.scheduler", "scrapy_test.zenodo"]
+SPIDER_MODULES = ["scrapy_test.spiders", "scrapy_test.spiders.scheduler"]
+NEWSPIDER_MODULE = "scrapy_test.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
